@@ -58,7 +58,7 @@ export function MainNav() {
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -21 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           className="flex items-center"
