@@ -60,15 +60,37 @@ export function HeroSection() {
                 />
               </div>
 
-              <motion.p
-                className="max-w-[700px] text-muted-foreground md:text-xl mt-2 mx-auto"
+              <motion.div
+                className="max-w-[700px]  mx-auto p-6 rounded-xl backdrop-blur-lg bg-white/15 dark:bg-black/25 border border-white/30 dark:border-white/10 shadow-xl relative overflow-hidden group"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                I build exceptional digital experiences that are fast,
-                accessible, visually appealing, and responsive.
-              </motion.p>
+                {/* Glassmorphism glow effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 via-purple-500/20 to-blue-500/30 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl animate-gradient bg-[length:200%_200%]"></div>
+
+                {/* Subtle light reflection */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-30"></div>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <p className="text-muted-foreground md:text-xl">
+                    Front-End Developer with more than one and half years of
+                    hands-on experience, specializing in{" "}
+                    <span className="text-primary font-medium">React</span> |{" "}
+                    <span className="text-primary font-medium">Next.js</span> |
+                    <span className="text-primary font-medium">TypeScript</span>{" "}
+                    | <span className="text-primary font-medium">Redux</span> |{" "}
+                    <span className="text-primary font-medium">Zustand</span> |{" "}
+                    <span className="text-primary font-medium">Shadcn</span> | I
+                    excel at building responsive, high-performing, and
+                    user-friendly web applications that deliver seamless UI/UX
+                    experiences. My passion lies in leveraging cutting-edge
+                    tools and technologies to craft clean, scalable, and
+                    efficient solutions that meet modern user needs.
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* CTA Buttons */}
