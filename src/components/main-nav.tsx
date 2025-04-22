@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
@@ -64,8 +65,29 @@ export function MainNav() {
           className="flex items-center"
         >
           <div className="flex items-center gap-4">
-            <Link href="#home" className="font-bold text-xl">
-              <span className="text-primary">Portfolio</span>
+            <Link href="#home" className="flex items-center">
+              <motion.div
+                className="relative mr-2 overflow-hidden rounded-full shadow-md"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0 0 8px rgba(109, 40, 217, 0.7)",
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <Image
+                  src="/images/rs.png"
+                  alt="Rajjak Shaikh"
+                  width={150}
+                  height={175}
+                  className="p-1"
+                />
+              </motion.div>
+              {/* <span className="font-bold text-xl text-primary hidden sm:inline-block ml-1">
+                Portfolio
+              </span> */}
             </Link>
 
             {/* Social Media Icons */}
@@ -159,7 +181,26 @@ export function MainNav() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full sm:w-[350px] px-6">
-              <div className="flex flex-col gap-6 h-full mt-10">
+              <div className="flex items-center mb-8 mt-4">
+                <motion.div
+                  className="relative w-10 h-10 mr-3 overflow-hidden rounded-full shadow-md"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src="/images/rs.png"
+                    alt="Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </motion.div>
+                <span className="font-bold text-xl text-primary">
+                  Portfolio
+                </span>
+              </div>
+              <div className="flex flex-col gap-6 h-full">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}

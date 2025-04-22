@@ -1,0 +1,24 @@
+.main-bg {
+  background-image: url("../public/images/herobg.png");
+  background-size: cover;
+}
+
+/* Canvas Loader */
+.canvas-loader {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 8px solid #ddd;
+  border-top: 8px solid #6d28d9; /* primary color */
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

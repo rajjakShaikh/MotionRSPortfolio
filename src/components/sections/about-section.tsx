@@ -1,41 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, CheckCircle } from "lucide-react";
+import { toast } from "sonner";
+import { trackDownload } from "@/lib/download-tracker";
+import { ComputersCanvas } from "../canvas";
 
 export function AboutSection() {
+  const HandleDownload = () => {
+    // Create and trigger download
+    const link = document.createElement("a");
+    link.href = "/docs/SoftwareDevResumeRajjak25.pdf"; // Replace with your actual resume file path
+    link.download = "Rajjak_Shaikh_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Track the download
+    const downloadCount = trackDownload();
+
+    // Show success toast
+    toast.success("Resume download started", {
+      description: `Thank you for your interest in my profile! ${
+        downloadCount > 1
+          ? `This resume has been downloaded ${downloadCount} times.`
+          : ""
+      }`,
+      icon: <CheckCircle className="h-5 w-5" />,
+      duration: 3000,
+    });
+  };
+
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-20">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-          {/* Left column - Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
-              <Image
-                src="/about-image.jpg"
-                alt="About me"
-                fill
-                className="object-cover"
-              />
+          <div className="h-screen ">
+            <ComputersCanvas />
+          </div>
 
-              {/* Decorative elements */}
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/30 rounded-full blur-xl" />
-
-              {/* Border decoration */}
-              <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-background rounded-lg opacity-50" />
-            </div>
-          </motion.div>
-
-          {/* Right column - Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +50,7 @@ export function AboutSection() {
             <div className="space-y-2">
               <motion.div
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                whileInView={{ opacity: 2 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
@@ -58,21 +62,34 @@ export function AboutSection() {
 
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I'm a passionate Frontend Developer with over 5 years of experience
-                  building modern, responsive web applications. My journey began as a graphic
-                  designer, which gives me a unique perspective on creating visually stunning
-                  and user-friendly interfaces.
+                  I'm a passionate Frontend Developer with over 1.5 years of
+                  experience building modern, responsive web applications. I
+                  love creating interactive and visually appealing user
+                  interfaces that provide exceptional user experiences.
                 </p>
                 <p>
-                  I specialize in React and Next.js development, with a strong focus on
-                  creating performant applications with clean, maintainable code. I'm deeply
-                  committed to web accessibility and believe that great websites should work
-                  for everyone.
+                  I specialize in{" "}
+                  <span className="text-primary font-medium">React</span> and{" "}
+                  <span className="text-primary font-medium">Next.js</span>{" "}
+                  development, with a strong focus on creating performant
+                  applications with clean, maintainable code. I'm deeply
+                  committed to web accessibility and believe that great websites
+                  should work for everyone.
                 </p>
                 <p>
-                  When I'm not coding, you can find me exploring new design trends,
-                  contributing to open-source projects, or enjoying outdoor activities
-                  to keep a healthy work-life balance.
+                  My technical toolkit includes{" "}
+                  <span className="text-primary font-medium">TypeScript</span>,{" "}
+                  <span className="text-primary font-medium">Redux</span>,{" "}
+                  <span className="text-primary font-medium">Zustand</span>,
+                  <span className="text-primary font-medium">Tailwind CSS</span>
+                  , and various modern frontend frameworks. I'm always eager to
+                  learn new technologies and stay at the cutting edge of web
+                  development.
+                </p>
+                <p>
+                  When I'm not coding, you can find me exploring new design
+                  trends, contributing to open-source projects, or enjoying
+                  outdoor activities to keep a healthy work-life balance.
                 </p>
               </div>
             </div>
@@ -87,11 +104,23 @@ export function AboutSection() {
             >
               <h3 className="text-xl font-semibold">Career Highlights</h3>
               <ul className="space-y-2 ml-5 list-disc text-muted-foreground">
-                <li>Led frontend development for 10+ successful client projects</li>
-                <li>Reduced load time by 40% on a high-traffic e-commerce site</li>
-                <li>Created responsive UIs that increased mobile conversion rates by 25%</li>
-                <li>Contributed to popular open-source UI component libraries</li>
-                <li>Mentored junior developers and led technical workshops</li>
+                <li>
+                  Developed and maintained multiple React/Next.js applications
+                </li>
+                <li>
+                  Implemented responsive designs that work flawlessly across all
+                  devices
+                </li>
+                <li>
+                  Built reusable component libraries to improve development
+                  efficiency
+                </li>
+                <li>
+                  Optimized web performance for better user experience and SEO
+                </li>
+                <li>
+                  Collaborated effectively with designers and backend developers
+                </li>
               </ul>
             </motion.div>
 
@@ -103,9 +132,15 @@ export function AboutSection() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-8"
             >
-              <Button className="gap-2">
-                <Download className="h-4 w-4" />
+              <Button
+                className="text-white mt-5 animate-bounce group border-2 border-[#ffd700] rounded-xl px-3 py-3 my-2 flex items-center 
+                hover:bg-[#ffd700] hover:text-black transition-all duration-900"
+                onClick={HandleDownload}
+              >
                 Download Resume
+                <span className="ml-3 group-hover:rotate-12 transition-transform duration-300">
+                  <Download />
+                </span>
               </Button>
             </motion.div>
           </motion.div>

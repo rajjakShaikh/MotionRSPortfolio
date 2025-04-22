@@ -8,13 +8,14 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Badge } from "@/components/ui/badge";
+import ShapeGroupData from "./../../../node_modules/lottie-web/player/js/elements/helpers/shapes/ShapeGroupData";
 
 interface Skill {
   name: string;
   icon: string;
   description: string;
   level: "beginner" | "intermediate" | "advanced" | "expert";
-  category: "frontend" | "backend" | "design" | "tools";
+  category: "frontend";
 }
 
 const skills: Skill[] = [
@@ -22,115 +23,123 @@ const skills: Skill[] = [
     name: "React",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     description: "Building interactive UIs with React and its ecosystem",
-    level: "expert",
-    category: "frontend"
+    level: "intermediate",
+    category: "frontend",
   },
   {
     name: "Next.js",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    description: "Server-side rendering, static site generation, and API routes",
-    level: "expert",
-    category: "frontend"
+    description:
+      "Server-side rendering, static site generation, and API routes",
+    level: "intermediate",
+    category: "frontend",
   },
   {
     name: "TypeScript",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     description: "Type-safe JavaScript development",
-    level: "advanced",
-    category: "frontend"
+    level: "intermediate",
+    category: "frontend",
   },
   {
     name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    icon: "/logos/tailwind.svg",
     description: "Utility-first CSS framework for rapid UI development",
-    level: "expert",
-    category: "frontend"
+    level: "intermediate",
+    category: "frontend",
+  },
+  {
+    name: "Shadcn Ui",
+    icon: "/logos/shad.svg",
+    description: "Utility-first CSS framework for rapid UI development",
+    level: "intermediate",
+    category: "frontend",
   },
   {
     name: "JavaScript",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     description: "Core language for web development",
-    level: "expert",
-    category: "frontend"
+    level: "intermediate",
+    category: "frontend",
   },
   {
     name: "HTML5",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     description: "Semantic markup and structure",
-    level: "expert",
-    category: "frontend"
+    level: "intermediate",
+    category: "frontend",
   },
   {
     name: "CSS3",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     description: "Styling and animations",
-    level: "expert",
-    category: "frontend"
+    level: "intermediate",
+    category: "frontend",
   },
   {
     name: "Redux",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
     description: "State management for complex applications",
-    level: "advanced",
-    category: "frontend"
-  },
-  {
-    name: "Node.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    description: "JavaScript runtime for server-side development",
     level: "intermediate",
-    category: "backend"
+    category: "frontend",
   },
-  {
-    name: "Express",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    description: "Web framework for Node.js",
-    level: "intermediate",
-    category: "backend"
-  },
-  {
-    name: "MongoDB",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    description: "NoSQL database for modern applications",
-    level: "intermediate",
-    category: "backend"
-  },
-  {
-    name: "Figma",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-    description: "Collaborative UI design tool",
-    level: "advanced",
-    category: "design"
-  },
-  {
-    name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    description: "Version control system",
-    level: "advanced",
-    category: "tools"
-  },
-  {
-    name: "Webpack",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
-    description: "Module bundler for JavaScript applications",
-    level: "intermediate",
-    category: "tools"
-  },
-  {
-    name: "Jest",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
-    description: "JavaScript testing framework",
-    level: "intermediate",
-    category: "tools"
-  }
+  // {
+  //   name: "Node.js",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  //   description: "JavaScript runtime for server-side development",
+  //   level: "intermediate",
+  //   category: "backend"
+  // },
+  // {
+  //   name: "Express",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  //   description: "Web framework for Node.js",
+  //   level: "intermediate",
+  //   category: "backend"
+  // },
+  // {
+  //   name: "MongoDB",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  //   description: "NoSQL database for modern applications",
+  //   level: "intermediate",
+  //   category: "backend"
+  // },
+  // {
+  //   name: "Figma",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+  //   description: "Collaborative UI design tool",
+  //   level: "advanced",
+  //   category: "design"
+  // },
+  // {
+  //   name: "Git",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  //   description: "Version control system",
+  //   level: "advanced",
+  //   category: "tools"
+  // },
+  // {
+  //   name: "Webpack",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
+  //   description: "Module bundler for JavaScript applications",
+  //   level: "intermediate",
+  //   category: "tools"
+  // },
+  // {
+  //   name: "Jest",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+  //   description: "JavaScript testing framework",
+  //   level: "intermediate",
+  //   category: "tools"
+  // }
 ];
 
 export function SkillsSection() {
   const categories = [
     { id: "frontend", label: "Frontend" },
-    { id: "backend", label: "Backend" },
-    { id: "design", label: "Design" },
-    { id: "tools", label: "Tools & Libraries" }
+    // { id: "backend", label: "Backend" },
+    // { id: "design", label: "Design" },
+    // { id: "tools", label: "Tools & Libraries" },
   ];
 
   const getSkillLevelColor = (level: Skill["level"]) => {
@@ -197,7 +206,9 @@ export function SkillsSection() {
                               className="h-10 w-10 object-contain"
                               alt={skill.name}
                             />
-                            <p className="font-medium text-center">{skill.name}</p>
+                            <p className="font-medium text-center">
+                              {skill.name}
+                            </p>
                             <Badge
                               variant="outline"
                               className={cn(
@@ -216,7 +227,9 @@ export function SkillsSection() {
                               className="h-8 w-8 object-contain"
                               alt={skill.name}
                             />
-                            <h4 className="text-lg font-semibold">{skill.name}</h4>
+                            <h4 className="text-lg font-semibold">
+                              {skill.name}
+                            </h4>
                           </div>
                           <p className="text-sm text-muted-foreground mt-2">
                             {skill.description}
