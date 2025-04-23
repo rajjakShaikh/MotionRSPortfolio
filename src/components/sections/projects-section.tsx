@@ -23,10 +23,18 @@ interface Project {
 const projects: Project[] = [
   {
     id: "proj1",
-    title: "E-Commerce Dashboard",
-    description: "A comprehensive admin dashboard for e-commerce platforms with real-time analytics, inventory management, and customer insights.",
-    image: "/projects/ecommerce-dashboard.jpg",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Chart.js", "Firebase"],
+    title: "National Payments Corporation of India (NPCI)",
+    description:
+      "Developed a robust NPCI Portal system with three modules: Admin Portal, Issuer Portal, and Corporate Portal, using React JS, Tailwind CSS, Axios, and Redux Toolkit. The Admin Portal allows onboarding of banks as issuers, while the Issuer Portal manages corporate accounts, and the Corporate Portal adds and manages employees. Integrated crypto-js for secure data handling, Chart.js for data visualization, and Formik for form validation. Designed with dynamic routing and a fully responsive grid layout, ensuring seamless navigation and usability across devices. This project demonstrates expertise in secure, scalable, and responsive web applications.",
+    image: "/public/images/npci-4A.jpg",
+    tags: [
+      "React",
+      "Redux",
+      "React-Query",
+      "Tailwind CSS",
+      "Chart.js",
+      "Formik",
+    ],
     demoUrl: "#",
     githubUrl: "#",
     featured: true,
@@ -34,9 +42,16 @@ const projects: Project[] = [
   {
     id: "proj2",
     title: "Fitness Tracker App",
-    description: "Mobile-responsive fitness tracking application with workout plans, progress charts, and nutrition tracking.",
-    image: "/projects/fitness-app.jpg",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Supabase"],
+    description:
+      "Mobile-responsive fitness tracking application with workout plans, progress charts, and nutrition tracking.",
+    image: "/public/images/npci-4A.jpg",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Supabase",
+    ],
     demoUrl: "#",
     githubUrl: "#",
     featured: true,
@@ -44,7 +59,8 @@ const projects: Project[] = [
   {
     id: "proj3",
     title: "Real Estate Listing Platform",
-    description: "Property listing website with advanced search filters, interactive maps, and user accounts for saved properties.",
+    description:
+      "Property listing website with advanced search filters, interactive maps, and user accounts for saved properties.",
     image: "/projects/real-estate.jpg",
     tags: ["React", "Redux", "MongoDB", "Express", "Node.js"],
     demoUrl: "#",
@@ -54,7 +70,8 @@ const projects: Project[] = [
   {
     id: "proj4",
     title: "Recipe Sharing Community",
-    description: "Social platform for sharing and discovering recipes with user-generated content, ratings, and comments.",
+    description:
+      "Social platform for sharing and discovering recipes with user-generated content, ratings, and comments.",
     image: "/projects/recipe-app.jpg",
     tags: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
     demoUrl: "#",
@@ -64,7 +81,8 @@ const projects: Project[] = [
   {
     id: "proj5",
     title: "Task Management System",
-    description: "Collaborative task management application with drag-and-drop boards, teams, and task assignments.",
+    description:
+      "Collaborative task management application with drag-and-drop boards, teams, and task assignments.",
     image: "/projects/task-management.jpg",
     tags: ["React", "TypeScript", "Redux", "Node.js", "MongoDB"],
     demoUrl: "#",
@@ -74,13 +92,14 @@ const projects: Project[] = [
   {
     id: "proj6",
     title: "Weather Forecast App",
-    description: "Weather application with 7-day forecasts, location-based services, and visualizations.",
+    description:
+      "Weather application with 7-day forecasts, location-based services, and visualizations.",
     image: "/projects/weather-app.jpg",
     tags: ["React", "React Query", "Tailwind CSS", "OpenWeather API"],
     demoUrl: "#",
     githubUrl: "#",
     featured: false,
-  }
+  },
 ];
 
 export function ProjectsSection() {
@@ -127,7 +146,7 @@ export function ProjectsSection() {
       transition: {
         type: "spring",
         stiffness: 100,
-      }
+      },
     },
   };
 
@@ -192,10 +211,7 @@ export function ProjectsSection() {
           animate="show"
         >
           {visibleProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={itemVariants}
-            >
+            <motion.div key={project.id} variants={itemVariants}>
               <Card className="h-full overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col">
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
@@ -217,7 +233,11 @@ export function ProjectsSection() {
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
-                      <Badge key={`${project.id}-${tag}`} variant="secondary" className="text-xs">
+                      <Badge
+                        key={`${project.id}-${tag}`}
+                        variant="secondary"
+                        className="text-xs"
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -225,12 +245,20 @@ export function ProjectsSection() {
                 </CardContent>
                 <CardFooter className="flex justify-between gap-2 pt-2">
                   <Button asChild variant="outline" size="sm" className="w-1/2">
-                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Github className="h-4 w-4 mr-2" /> Code
                     </Link>
                   </Button>
                   <Button asChild size="sm" className="w-1/2">
-                    <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink className="h-4 w-4 mr-2" /> Demo
                     </Link>
                   </Button>

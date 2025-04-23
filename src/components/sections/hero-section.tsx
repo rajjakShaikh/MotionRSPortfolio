@@ -153,7 +153,8 @@ export function HeroSection() {
             >
               <div className="h-px flex-1 bg-border"></div>
               <p className="text-sm text-muted-foreground whitespace-nowrap">
-                Specializing in React, Next.js, and TypeScript, Shadcn
+                Specializing in React, Next.js, Tailwind CSS, TypeScript,
+                Shadcn, Redux, and Zustand.
               </p>
               <div className="h-px flex-1 bg-border"></div>
             </motion.div>
