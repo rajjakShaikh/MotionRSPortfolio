@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -15,8 +15,7 @@ interface Project {
   description: string;
   image: string;
   tags: string[];
-  demoUrl: string;
-  githubUrl: string;
+  demoUrl?: string;
   featured: boolean;
 }
 
@@ -26,7 +25,7 @@ const projects: Project[] = [
     title: "National Payments Corporation of India (NPCI)",
     description:
       "Developed a robust NPCI Portal system with three modules: Admin Portal, Issuer Portal, and Corporate Portal, using React JS, Tailwind CSS, Axios, and Redux Toolkit. The Admin Portal allows onboarding of banks as issuers, while the Issuer Portal manages corporate accounts, and the Corporate Portal adds and manages employees. Integrated crypto-js for secure data handling, Chart.js for data visualization, and Formik for form validation. Designed with dynamic routing and a fully responsive grid layout, ensuring seamless navigation and usability across devices. This project demonstrates expertise in secure, scalable, and responsive web applications.",
-    image: "/public/images/npci-4A.jpg",
+    image: "/images/npci-4A.jpg",
     tags: [
       "React",
       "Redux",
@@ -36,75 +35,36 @@ const projects: Project[] = [
       "Formik",
     ],
     demoUrl: "#",
-    githubUrl: "#",
     featured: true,
   },
   {
     id: "proj2",
     title: "Fitness Tracker App",
     description:
-      "Mobile-responsive fitness tracking application with workout plans, progress charts, and nutrition tracking.",
-    image: "/public/images/npci-4A.jpg",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Supabase",
-    ],
+      "Developed a modern and responsive Shoe Store Website using React JS, Redux Toolkit, and Tailwind CSS, featuring a sleek and user-friendly interface. The website includes functionality for adding products to a cart with real-time updates, wishlist management, and category-based filtering for personalized browsing. It ensures seamless performance across devices with a fully responsive design. Efficient state management using Redux Toolkit enables smooth handling of cart and wishlist features. This project demonstrates expertise in creating visually appealing, functional, and dynamic e-commerce applications",
+    image: "/images/npci-4A.jpg",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: true,
   },
   {
     id: "proj3",
     title: "Real Estate Listing Platform",
     description:
-      "Property listing website with advanced search filters, interactive maps, and user accounts for saved properties.",
-    image: "/projects/real-estate.jpg",
+      "Property listing website with advanced search filters, interactive maps, and user accounts for saved properties. Built with the MERN stack (MongoDB, Express, React, Node.js) for a full-stack solution. Implemented Redux for state management and responsive design for all devices.",
+    image: "/images/npci-4A.jpg",
     tags: ["React", "Redux", "MongoDB", "Express", "Node.js"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: true,
-  },
-  {
-    id: "proj4",
-    title: "Recipe Sharing Community",
-    description:
-      "Social platform for sharing and discovering recipes with user-generated content, ratings, and comments.",
-    image: "/projects/recipe-app.jpg",
-    tags: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    id: "proj5",
-    title: "Task Management System",
-    description:
-      "Collaborative task management application with drag-and-drop boards, teams, and task assignments.",
-    image: "/projects/task-management.jpg",
-    tags: ["React", "TypeScript", "Redux", "Node.js", "MongoDB"],
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    id: "proj6",
-    title: "Weather Forecast App",
-    description:
-      "Weather application with 7-day forecasts, location-based services, and visualizations.",
-    image: "/projects/weather-app.jpg",
-    tags: ["React", "React Query", "Tailwind CSS", "OpenWeather API"],
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
   },
 ];
 
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [visibleProjects, setVisibleProjects] = useState<Project[]>(projects);
+  const [expandedProjects, setExpandedProjects] = useState<
+    Record<string, boolean>
+  >({});
 
   // Extract unique tags from all projects
   const allTags = Array.from(
@@ -124,6 +84,14 @@ export function ProjectsSection() {
         projects.filter((project) => project.tags.includes(tag))
       );
     }
+  };
+
+  // Toggle description expansion
+  const toggleDescription = (projectId: string) => {
+    setExpandedProjects((prev) => ({
+      ...prev,
+      [projectId]: !prev[projectId],
+    }));
   };
 
   // Container animation
@@ -228,10 +196,20 @@ export function ProjectsSection() {
                 </div>
                 <CardContent className="pt-6 pb-2 flex-grow">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="relative">
+                    <div
+                      className={`text-muted-foreground text-sm mb-4 ${
+                        !expandedProjects[project.id] ? "line-clamp-3" : ""
+                      }`}
+                    >
+                      {project.description}
+                    </div>
+                    {project.description.length > 150 &&
+                      !expandedProjects[project.id] && (
+                        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-background to-transparent"></div>
+                      )}
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
                     {project.tags.map((tag) => (
                       <Badge
                         key={`${project.id}-${tag}`}
@@ -244,18 +222,33 @@ export function ProjectsSection() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex justify-between gap-2 pt-2">
-                  <Button asChild variant="outline" size="sm" className="w-1/2">
-                    <Link
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {project.description.length > 150 && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-1/2 flex items-center gap-1"
+                      onClick={() => toggleDescription(project.id)}
                     >
-                      <Github className="h-4 w-4 mr-2" /> Code
-                    </Link>
-                  </Button>
-                  <Button asChild size="sm" className="w-1/2">
+                      {expandedProjects[project.id] ? (
+                        <>
+                          <ChevronUp className="h-3 w-3" /> Show Less
+                        </>
+                      ) : (
+                        <>
+                          <ChevronDown className="h-3 w-3" /> Read More
+                        </>
+                      )}
+                    </Button>
+                  )}
+                  <Button
+                    asChild
+                    size="sm"
+                    className={
+                      project.description.length > 150 ? "w-1/2" : "w-full"
+                    }
+                  >
                     <Link
-                      href={project.demoUrl}
+                      href={project.demoUrl || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

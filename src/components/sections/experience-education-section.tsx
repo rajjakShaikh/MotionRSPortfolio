@@ -36,7 +36,7 @@ export function ExperienceEducationSection() {
   };
 
   return (
-    <section id="experience-education" className="py-20">
+    <section id="experience-education" className="py-5">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

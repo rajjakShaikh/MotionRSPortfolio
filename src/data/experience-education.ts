@@ -2,86 +2,109 @@
 export const experiences = [
   {
     id: 1,
-    role: "Frontend Developer",
-    company: "Tech Solutions Inc.",
-    location: "Mumbai, India",
-    duration: "Jan 2023 - Present",
-    description: "Developing responsive web applications using React, Next.js, and TypeScript. Implementing modern UI designs with Tailwind CSS and Shadcn UI components.",
+    role: "Software Developer Executive (Full Time)",
+    company: "SP IT SOLUTIONS LLP",
+    location: "Pune, India",
+    duration: "Feb 2025 - Present",
+    description:
+      "My role centered around seamlessly integrating front-end logic by building dynamic, user-focused UIs using clean code practices and reusable components. I consistently met project deadlines through efficient time management and collaborated closely with UI/UX designers to transform wireframes into responsive interfaces using Tailwind CSS and Shadcn UI.",
     achievements: [
-      "Reduced page load time by 40% through code optimization and lazy loading",
-      "Implemented state management using Redux and Zustand",
+      "Developed reusable component libraries to improve development efficiency",
+      "Implemented state management using Zustand",
       "Collaborated with designers to create pixel-perfect UIs",
-      "Developed reusable component libraries to improve development efficiency"
     ],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux"],
-    logo: "/logos/company1.svg" // Replace with actual company logo
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React Query",
+      "Formik",
+      "zustand",
+      "Shadcn UI",
+    ],
+    logo: "/images/sp_it_solutions_logo.jpeg", // Company logo
   },
   {
     id: 2,
-    role: "Junior Web Developer",
-    company: "Digital Creations",
-    location: "Remote",
-    duration: "Jun 2022 - Dec 2022",
-    description: "Worked on building and maintaining client websites using modern web technologies. Focused on creating responsive layouts and interactive UI elements.",
+    role: "Software Developer",
+    company: "Prysom Systems Pvt Ltd.",
+    location: "Pune, India",
+    duration: "Feb 2024 - Feb 2025",
+    description:
+      "Project : National Payments Corporation of India (NPCI)  Developed the responsive and user-centric portals for Admin, Issuer, and Corporate users, ensuring cross-device compatibility and a smooth user experience.",
     achievements: [
-      "Developed 5+ client websites from design to deployment",
-      "Implemented responsive designs that work across all devices",
-      "Optimized website performance and SEO",
-      "Integrated third-party APIs for enhanced functionality"
+      "Designed dynamic forms using Formik with robust validation for data integrity.",
+      "Implemented secure role-based authentication across multiple portals (Admin, Node Admin, User).",
+      "Optimized performance with efficient API integration using Axios and Redux Toolkit.",
+      "IManaged dynamic routing via React Router to enhance user navigation.",
+      "Refactored code to meet SonarQube standards and deployed applications on dev servers.",
+      "Collaborated within a 5-member team using Java backend to deliver scalable solutions.",
     ],
-    technologies: ["JavaScript", "HTML5", "CSS3", "React", "Bootstrap"],
-    logo: "/logos/company2.svg" // Replace with actual company logo
+    technologies: [
+      "JavaScript",
+      "RectJs",
+      "CryptoJS",
+      "TailwindCSS",
+      "React Query",
+      "Redux",
+      "Formik",
+    ],
+    logo: "/images/Logowtext-1.png", // Replace with actual company logo
   },
   {
     id: 3,
-    role: "Web Development Intern",
-    company: "StartUp Hub",
+    role: "Front end Developer Intern",
+    company: "Omegasoft Technologies Pvt Ltd",
     location: "Pune, India",
-    duration: "Jan 2022 - May 2022",
-    description: "Assisted in developing web applications for startups. Gained hands-on experience with modern frontend technologies and development workflows.",
+    duration: "Aug-2022 - Jan 2023",
+    description:
+      "Gained hands-on experience with modern frontend technologies and development workflows.",
     achievements: [
-      "Contributed to the development of 3 startup MVPs",
       "Learned and implemented best practices for web development",
       "Participated in code reviews and team meetings",
-      "Created interactive UI components using React"
+      "Created interactive UI components using React",
     ],
-    technologies: ["HTML5", "CSS3", "JavaScript", "React", "Git"],
-    logo: "/logos/company3.svg" // Replace with actual company logo
-  }
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Git",
+      "TailwindCSS",
+      "Bootstrap",
+    ],
+    logo: "/logos/omega.jpeg",
+  },
 ];
 
 // Education data
 export const education = [
   {
     id: 1,
-    degree: "Bachelor of Engineering in Computer Science",
-    institution: "Mumbai University",
-    location: "Mumbai, India",
-    duration: "2018 - 2022",
-    description: "Studied computer science fundamentals, data structures, algorithms, and software engineering principles. Specialized in web development and user interface design.",
+    degree: "Bachelor in Computer Science",
+    institution: "DR.D.Y PATIL INSTITUTE of Technology (Pune University)",
+    location: "Pune, India",
+    duration: "2019-2022",
+    description:
+      "Studied computer science fundamentals, data structures, algorithms, and software engineering principles. Specialized in web development and user interface design.",
     achievements: [
       "Graduated with First Class Honors",
       "Developed a full-stack web application for final year project",
       "Participated in coding competitions and hackathons",
-      "Member of the university's web development club"
+      "Member of the university's web development club",
     ],
-    courses: ["Data Structures & Algorithms", "Web Development", "Database Management", "Software Engineering", "UI/UX Design"],
-    logo: "/logos/education1.svg" // Replace with actual institution logo
+    courses: ["Web Development", "UI/UX Design"],
+    logo: "/logos/education1.svg", // Replace with actual institution logo
   },
   {
     id: 2,
-    degree: "Web Development Bootcamp",
-    institution: "CodeCamp Academy",
+    degree: "HRM School & college Rajgurunagar Pune",
+    institution: "Pune University",
     location: "Online",
-    duration: "2021 (3 months)",
-    description: "Intensive bootcamp focused on modern web development technologies and practices. Gained hands-on experience building real-world projects.",
-    achievements: [
-      "Completed 10+ projects using modern web technologies",
-      "Developed a full-stack e-commerce application",
-      "Received certification with distinction",
-      "Selected for mentorship program"
-    ],
-    courses: ["Frontend Development", "React & Redux", "Responsive Design", "API Integration", "Deployment & DevOps"],
-    logo: "/logos/education2.svg" // Replace with actual institution logo
-  }
+    duration: "2017-2018",
+    description: "Specialize Subject Computer science",
+    courses: ["Web Development", "UI/UX Design"],
+    logo: "/logos/education2.svg", // Replace with actual institution logo
+  },
 ];
