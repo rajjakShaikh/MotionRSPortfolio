@@ -18,39 +18,22 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: "t1",
-    name: "Sarah Johnson",
-    role: "Product Manager",
+    name: "Sarthak Sharma",
+    role: "Ui/UX designer",
     company: "TechForward",
     image: "/testimonials/sarah.jpg",
     quote:
       "Working with this developer was a game-changer for our project. Their attention to detail and ability to translate our ideas into elegant code exceeded our expectations. The frontend they built not only looks stunning but performs exceptionally well.",
   },
-  {
-    id: "t2",
-    name: "Michael Chen",
-    role: "CTO",
-    company: "Startup Innovate",
-    image: "/testimonials/michael.jpg",
-    quote:
-      "I've worked with many developers, but few have the combination of technical expertise and design sensibility that they possess. They delivered our application ahead of schedule and implemented innovative solutions that significantly improved user engagement.",
-  },
+
   {
     id: "t3",
-    name: "Emily Rodriguez",
+    name: "Rahul Shinde",
     role: "UX Designer",
     company: "Creative Studios",
     image: "/testimonials/emily.jpg",
     quote:
       "As a designer, I appreciate a developer who can bring my designs to life with precision. They turned my complex animations and interactions into flawless code, and the collaboration was smooth throughout the entire process.",
-  },
-  {
-    id: "t4",
-    name: "David Foster",
-    role: "Marketing Director",
-    company: "Global Reach Inc.",
-    image: "/testimonials/david.jpg",
-    quote:
-      "Our website revamp led to a 40% increase in conversions, thanks to the intuitive user interface and lightning-fast performance. I was particularly impressed by their commitment to accessibility and creating an inclusive experience for all users.",
   },
 ];
 
@@ -126,13 +109,21 @@ export function TestimonialsSection() {
 
                     <div className="flex items-center">
                       <Avatar className="h-12 w-12 border-2 border-primary">
-                        <AvatarImage src={testimonials[activeIndex].image} alt={testimonials[activeIndex].name} />
-                        <AvatarFallback>{testimonials[activeIndex].name.charAt(0)}</AvatarFallback>
+                        <AvatarImage
+                          src={testimonials[activeIndex].image}
+                          alt={testimonials[activeIndex].name}
+                        />
+                        <AvatarFallback>
+                          {testimonials[activeIndex].name.charAt(0)}
+                        </AvatarFallback>
                       </Avatar>
                       <div className="ml-4">
-                        <p className="text-base font-medium">{testimonials[activeIndex].name}</p>
+                        <p className="text-base font-medium">
+                          {testimonials[activeIndex].name}
+                        </p>
                         <p className="text-sm text-muted-foreground">
-                          {testimonials[activeIndex].role}, {testimonials[activeIndex].company}
+                          {testimonials[activeIndex].role},{" "}
+                          {testimonials[activeIndex].company}
                         </p>
                       </div>
                     </div>

@@ -9,7 +9,6 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Badge } from "@/components/ui/badge";
-import { ExperienceEducationSection } from "./experience-education-section";
 import { BallCanvas } from "@/components/canvas";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -397,16 +396,6 @@ export function SkillsSection() {
             ))}
           </div>
         )}
-
-        {/* Separator */}
-        <div className="mt-20 mb-5 flex items-center justify-center">
-          <div className="h-px w-full max-w-sm bg-border"></div>
-          <div className="mx-4 text-muted-foreground">My Journey</div>
-          <div className="h-px w-full max-w-sm bg-border"></div>
-        </div>
-
-        {/* Experience & Education Section */}
-        <ExperienceEducationSection />
       </div>
     </section>
   );

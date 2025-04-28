@@ -39,22 +39,52 @@ const projects: Project[] = [
   },
   {
     id: "proj2",
-    title: "Fitness Tracker App",
+    title: "KickitUp Shoes E commerce Website",
     description:
-      "Developed a modern and responsive Shoe Store Website using React JS, Redux Toolkit, and Tailwind CSS, featuring a sleek and user-friendly interface. The website includes functionality for adding products to a cart with real-time updates, wishlist management, and category-based filtering for personalized browsing. It ensures seamless performance across devices with a fully responsive design. Efficient state management using Redux Toolkit enables smooth handling of cart and wishlist features. This project demonstrates expertise in creating visually appealing, functional, and dynamic e-commerce applications",
-    image: "/images/npci-4A.jpg",
+      "Developed a modern and responsive Shoe Store Website using Next Js, Redux Toolkit, and Tailwind CSS, featuring a sleek and user-friendly interface. The website includes functionality for adding products to a cart with real-time updates, wishlist management, and category-based filtering for personalized browsing. It ensures seamless performance across devices with a fully responsive design. Efficient state management using Redux Toolkit enables smooth handling of cart and wishlist features. This project demonstrates expertise in creating visually appealing, functional, and dynamic e-commerce applications",
+    image: "/images/shoes-1.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"],
-    demoUrl: "#",
+    demoUrl: "https://kickitup.netlify.app/",
     featured: true,
   },
   {
     id: "proj3",
-    title: "Real Estate Listing Platform",
+    title: "Cerave OBS Study Website",
     description:
-      "Property listing website with advanced search filters, interactive maps, and user accounts for saved properties. Built with the MERN stack (MongoDB, Express, React, Node.js) for a full-stack solution. Implemented Redux for state management and responsive design for all devices.",
-    image: "/images/npci-4A.jpg",
-    tags: ["React", "Redux", "MongoDB", "Express", "Node.js"],
-    demoUrl: "#",
+      "Designed and developed a fully responsive and production-ready website using HTML, Bootstrap, CSS, and PHP. The site is optimized for performance and user experience, showcasing a clean and professional layout suitable for its target audience.",
+    image: "/images/mediccapress.png",
+    tags: ["Html5", "CSS3", "Bootstrap", "PHP"],
+    demoUrl: "https://cerave-obs-study.mediccapress.online/",
+    featured: true,
+  },
+  {
+    id: "proj4",
+    title: "Fibrosis calculator (MediccaPress)",
+    description:
+      "Developed a FIB-4 calculator using Next.js to analyze liver fibrosis risk. The tool allows users to input age, AST, ALT, and platelet count (with unit conversion) and calculates the FIB-4 score dynamically. Features include real-time validation, responsive design, and a user-friendly interface for healthcare professionals.",
+    image: "/images/fib.png",
+    tags: ["NextJS", "Tailwind CSS", "JavaScript", "github"],
+    demoUrl: "https://fib-4-score-calculator.mediccapress.online/",
+    featured: true,
+  },
+  {
+    id: "proj5",
+    title: "El Junto",
+    description:
+      "Developed a simple and responsive ElJunto static website using HTML, Bootstrap, and GitHub. The site provides an overview of the ElJunto mobile app and includes key pages such as the Home Page, Privacy Policy, and Terms of Service. Designed to ensure a clean layout with seamless responsiveness for an optimal viewing experience across devices. This project demonstrates expertise in building lightweight and user-focused static web solutions.",
+    image: "/images/eljunto.png",
+    tags: ["Html5", "Bootstrap", "JavaScript", "github"],
+    demoUrl: "https://eljunto.com/",
+    featured: true,
+  },
+  {
+    id: "proj6",
+    title: "Katha Mehfil",
+    description:
+      "Designed and developed a fully responsive Katha Mehfil website using React.js and Tailwind CSS. The project focuses on an elegant, user-friendly interface optimized for various screen sizes. Currently in development, with the full design completed and responsiveness implemented.",
+    image: "/images/katha.png",
+    tags: ["React JS", "Tailwind CSS", "JavaScript", "github"],
+    demoUrl: "https://eljunto.com/",
     featured: true,
   },
 ];
@@ -119,7 +149,7 @@ export function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="mt-10">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
