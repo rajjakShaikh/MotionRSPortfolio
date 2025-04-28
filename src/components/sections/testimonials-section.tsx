@@ -18,9 +18,9 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: "t1",
-    name: "Sarthak Sharma",
-    role: "Ui/UX designer",
-    company: "TechForward",
+    name: "Vivek Khule",
+    role: "Front end developer",
+    company: "SP IT SOLUTIONS LLP",
     image: "/testimonials/sarah.jpg",
     quote:
       "Working with this developer was a game-changer for our project. Their attention to detail and ability to translate our ideas into elegant code exceeded our expectations. The frontend they built not only looks stunning but performs exceptionally well.",
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
   {
     id: "t3",
     name: "Rahul Shinde",
-    role: "UX Designer",
+    role: "Front end developer",
     company: "Creative Studios",
     image: "/testimonials/emily.jpg",
     quote:
