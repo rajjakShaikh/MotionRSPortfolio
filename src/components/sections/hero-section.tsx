@@ -38,8 +38,11 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex flex-col justify-center py-20 overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className="main-bg absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background dark:from-primary/5"></div>
+      {/* Animated background gradient */}
+      <div className="main-bg absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-background to-background dark:from-primary/10 dark:via-background/80 dark:to-background animate-gradient-slow bg-[length:400%_400%]"></div>
+
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 -z-10 bg-[url('/grid.svg')] bg-center opacity-5 dark:opacity-10"></div>
 
       {/* Falling logos background */}
       <FallingLogos />
@@ -90,6 +93,7 @@ export function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{ scale: 1.02 }}
               >
                 {/* Glow effect */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 via-purple-500/20 to-blue-500/30 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl animate-gradient bg-[length:200%_200%]"></div>
@@ -102,13 +106,48 @@ export function HeroSection() {
                   <p className="text-muted-foreground md:text-xl">
                     Front-End Developer with more than one and half years of
                     hands-on experience, specializing in{" "}
-                    <span className="text-primary font-medium">React</span> |{" "}
-                    <span className="text-primary font-medium">Next.js</span> |{" "}
-                    <span className="text-primary font-medium">TypeScript</span>{" "}
-                    | <span className="text-primary font-medium">Redux</span> |{" "}
-                    <span className="text-primary font-medium">Zustand</span> |{" "}
-                    <span className="text-primary font-medium">Shadcn</span> | I
-                    excel at building responsive, high-performing, and
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      React
+                    </motion.span>{" "}
+                    |{" "}
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      Next.js
+                    </motion.span>{" "}
+                    |{" "}
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      TypeScript
+                    </motion.span>{" "}
+                    |{" "}
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      Redux
+                    </motion.span>{" "}
+                    |{" "}
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      Zustand
+                    </motion.span>{" "}
+                    |{" "}
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      Shadcn
+                    </motion.span>{" "}
+                    | I excel at building responsive, high-performing, and
                     user-friendly web applications that deliver seamless UI/UX
                     experiences.
                   </p>
@@ -125,21 +164,30 @@ export function HeroSection() {
             >
               <Button
                 asChild
-                className="gap-1 rounded-xl px-3 py-3 text-md sm:w-40"
+                className="gap-1 rounded-xl px-3 py-3 text-md sm:w-40 relative overflow-hidden group"
               >
-                <Link href="#contact">
-                  Contact Me
-                  <Send className="h-4 w-4 ml-2" />
+                <Link
+                  href="#contact"
+                  className="flex items-center justify-center"
+                >
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-primary to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
+                  <span className="relative z-10 flex items-center">
+                    Contact Me
+                    <Send className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
                 </Link>
               </Button>
               <Button
-                className="text-white mt-5 animate-bounce group border-2 border-[#ffd700] rounded-xl px-3 py-3 my-2 flex items-center 
-                hover:bg-[#ffd700] hover:text-black transition-all duration-900"
+                className="relative overflow-hidden text-white  group border-2 border-[#ffd700] rounded-xl px-3 py-3  flex items-center
+                hover:bg-[#ffd700] hover:text-black transition-all duration-300"
                 onClick={HandleDownload}
               >
-                Download Resume
-                <span className="ml-3 group-hover:rotate-12 transition-transform duration-300">
-                  <Download />
+                <span className="absolute inset-0 w-0 bg-[#ffd700] group-hover:w-full transition-all duration-300 -z-10"></span>
+                <span className="relative z-10 flex items-center">
+                  Download Resume
+                  <span className="ml-3 group-hover:rotate-12 transition-transform duration-100">
+                    <Download className="animate-pulse " />
+                  </span>
                 </span>
               </Button>
             </motion.div>
