@@ -12,7 +12,17 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Frontend Developer Portfolio",
-  description: "A modern frontend developer portfolio showcasing my projects and skills",
+  description:
+    "A modern frontend developer portfolio showcasing my projects and skills",
+  icons: {
+    icon: "/rsfevIcon.webp",
+    shortcut: "/rsfevIcon.webp",
+    apple: "/rsfevIcon.webp",
+    other: {
+      rel: "apple-touch-icon",
+      url: "/rsfevIcon.webp",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +38,12 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
           <Toaster />
         </ThemeProvider>

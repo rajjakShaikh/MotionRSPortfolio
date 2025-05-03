@@ -2,15 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Heart,
-  ArrowUp,
-  Github,
-  Linkedin,
-  Mail,
-  Code,
-  Sparkles,
-} from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail, Code, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -116,8 +108,8 @@ export function Footer() {
                 </motion.div>
               </Link>
               <p className="text-muted-foreground max-w-xs">
-                Frontend developer specializing in creating beautiful,
-                responsive, and user-friendly web applications.
+                Frontend developer specializing in creating modern responsive,
+                and user-friendly web applications.
               </p>
               <div className="flex gap-3 pt-2">
                 {socialLinks.map((link) => (
@@ -125,6 +117,8 @@ export function Footer() {
                     key={link.label}
                     href={link.href}
                     target="_blank"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-card hover:bg-primary/10 transition-colors"
                     whileHover={{ y: -3, scale: 1.1 }}
@@ -192,14 +186,13 @@ export function Footer() {
                 ))}
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground mt-4">
-                <p>Crafted with</p>
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}
                 >
-                  <Heart className="h-4 w-4 text-red-500 fill-red-500" />
+                  <Mail className="h-4 w-4 text-blue-500" />
                 </motion.div>
-                <p>and passion</p>
+                <p>razzakshaik8800@gmail.com</p>
               </div>
             </div>
           </div>

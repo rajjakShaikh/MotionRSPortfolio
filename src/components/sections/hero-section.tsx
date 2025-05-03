@@ -104,8 +104,8 @@ export function HeroSection() {
                 {/* Content */}
                 <div className="relative z-10">
                   <p className="text-muted-foreground md:text-xl">
-                    Front-End Developer with more than one and half years of
-                    hands-on experience, specializing in{" "}
+                    Front-End Developer with Two Years of hands-on experience,
+                    specializing in{" "}
                     <motion.span
                       className="text-primary font-medium inline-block"
                       whileHover={{ scale: 1.1, y: -2 }}
@@ -118,6 +118,13 @@ export function HeroSection() {
                       whileHover={{ scale: 1.1, y: -2 }}
                     >
                       Next.js
+                    </motion.span>{" "}
+                    |{" "}
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      Tailwind CSS
                     </motion.span>{" "}
                     |{" "}
                     <motion.span
@@ -145,7 +152,14 @@ export function HeroSection() {
                       className="text-primary font-medium inline-block"
                       whileHover={{ scale: 1.1, y: -2 }}
                     >
-                      Shadcn
+                      React Query
+                    </motion.span>{" "}
+                    |{" "}
+                    <motion.span
+                      className="text-primary font-medium inline-block"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      ShadCN
                     </motion.span>{" "}
                     | I excel at building responsive, high-performing, and
                     user-friendly web applications that deliver seamless UI/UX

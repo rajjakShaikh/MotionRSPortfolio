@@ -28,9 +28,9 @@ const testimonials: Testimonial[] = [
 
   {
     id: "t3",
-    name: "Rahul Shinde",
+    name: "Inshrah Shaikh",
     role: "Front end developer",
-    company: "Creative Studios",
+    company: "SP IT solutions LLP",
     image: "/testimonials/emily.jpg",
     quote:
       "As a designer, I appreciate a developer who can bring my designs to life with precision. They turned my complex animations and interactions into flawless code, and the collaboration was smooth throughout the entire process.",

@@ -65,29 +65,77 @@ export function MainNav() {
           className="flex items-center"
         >
           <div className="flex items-center gap-4">
-            <Link href="#home" className="flex items-center">
-              <motion.div
-                className="relative mr-2 overflow-hidden rounded-full shadow-md"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: "0 0 8px rgba(109, 40, 217, 0.7)",
-                  transition: { duration: 0.2 },
-                }}
-              >
-                <Image
-                  src="/images/rs.png"
-                  alt="Rajjak Shaikh"
-                  width={150}
-                  height={175}
-                  className="p-1"
-                />
-              </motion.div>
-              {/* <span className="font-bold text-xl text-primary hidden sm:inline-block ml-1">
-                Portfolio
-              </span> */}
+            <Link href="#home" className="flex items-center group">
+              <div className="relative flex items-center">
+                {/* Logo Container */}
+                <motion.div
+                  className="relative overflow-hidden rounded-full shadow-md bg-gradient-to-br from-primary/20 to-background border border-primary/20 h-10 w-10 flex items-center justify-center"
+                  initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
+                  animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 5,
+                    boxShadow: "0 0 12px rgba(109, 40, 217, 0.5)",
+                    transition: { duration: 0.3, type: "spring" },
+                  }}
+                >
+                  {/* Animated Background */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/10 opacity-70"
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 8,
+                      ease: "linear",
+                    }}
+                  />
+
+                  {/* Initials */}
+                  <motion.div
+                    className="relative z-10 text-lg font-bold text-primary"
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 3,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    RS
+                  </motion.div>
+                </motion.div>
+
+                {/* Name with animated gradient */}
+                <motion.div
+                  className="ml-2 hidden sm:block"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                >
+                  <motion.span
+                    className="font-medium text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-200% tracking-wide"
+                    animate={{
+                      backgroundPosition: [
+                        "0% center",
+                        "200% center",
+                        "0% center",
+                      ],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    𝓇𝒶𝒿𝒿𝒶𝓀
+                  </motion.span>
+                  <motion.span className="font-light text-sm text-muted-foreground ml-1 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    𝓈𝒽𝒶𝒾𝓀𝒽
+                  </motion.span>
+                </motion.div>
+              </div>
             </Link>
 
             {/* Social Media Icons */}
@@ -182,23 +230,48 @@ export function MainNav() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full sm:w-[350px] px-6">
               <div className="flex items-center mb-8 mt-4">
+                {/* Logo Container */}
                 <motion.div
-                  className="relative w-10 h-10 mr-3 overflow-hidden rounded-full shadow-md"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
+                  className="relative overflow-hidden rounded-full shadow-md bg-gradient-to-br from-primary/20 to-background border border-primary/20 h-10 w-10 flex items-center justify-center mr-3"
+                  initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
+                  animate={{ scale: 1, opacity: 1, rotate: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Image
-                    src="/images/rs.png"
-                    alt="Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain"
+                  {/* Animated Background */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/10 opacity-70"
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 8,
+                      ease: "linear",
+                    }}
                   />
+
+                  {/* Initials */}
+                  <motion.div
+                    className="relative z-10 text-lg font-bold text-primary"
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 3,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    RS
+                  </motion.div>
                 </motion.div>
-                <span className="font-bold text-xl text-primary">
-                  Portfolio
-                </span>
+
+                <div className="flex flex-col">
+                  <span className="font-medium text-lg text-primary">
+                    Rajjak Shaikh
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    Frontend Developer
+                  </span>
+                </div>
               </div>
               <div className="flex flex-col gap-6 h-full">
                 {navItems.map((item) => (
