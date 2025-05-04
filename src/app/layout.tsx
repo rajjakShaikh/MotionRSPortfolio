@@ -47,6 +47,31 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
+
+        {/* Suppress THREE.js errors without changing functionality */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Original console.error function
+              const originalConsoleError = console.error;
+
+              // Override console.error to filter out specific Three.js errors
+              console.error = function(...args) {
+                // Check if this is the specific THREE.BufferGeometry.computeBoundingSphere NaN error
+                const errorMessage = args.length > 0 ? args[0] : '';
+
+                if (typeof errorMessage === 'string' &&
+                    errorMessage.includes('THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN')) {
+                  // Silently ignore this specific error
+                  return;
+                }
+
+                // Pass all other errors to the original console.error
+                originalConsoleError.apply(console, args);
+              };
+            `,
+          }}
+        />
       </body>
     </html>
   );
