@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -13,8 +13,47 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    // Function to handle responsive sizing
+    const handleResize = () => {
+      if (canvasRef.current) {
+        const canvas = canvasRef.current;
+
+        // Reset any inline styles that might be causing issues
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+
+        // Force a redraw
+        if (canvas.parentElement) {
+          const width = canvas.parentElement.clientWidth;
+          const height = canvas.parentElement.clientHeight;
+
+          // Update renderer size if needed
+          if (canvas.__r3f && canvas.__r3f.fiber) {
+            const { gl } = canvas.__r3f.fiber;
+            gl.setSize(width, height);
+          }
+        }
+      }
+    };
+
+    // Initial sizing
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Canvas
+      ref={canvasRef}
       shadows
       frameloop="demand"
       dpr={[1, 2]}
@@ -25,6 +64,7 @@ const EarthCanvas = () => {
         far: 200,
         position: [-4, 3, 5],
       }}
+      style={{ width: "100%", height: "100%" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <ambientLight intensity={0.3} />

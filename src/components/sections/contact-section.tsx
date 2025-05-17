@@ -96,34 +96,36 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="space-y-2 text-center mb-16"
+          className="space-y-2 text-center mb-8 sm:mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl/tight">
             Get In Touch
           </h2>
-          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+          <p className="mx-auto max-w-[700px] text-sm sm:text-base text-muted-foreground md:text-xl px-4">
             Have a project in mind or want to discuss a collaboration? I'd love
             to hear from you.
           </p>
         </motion.div>
 
-        <div className="grid gap-10 lg:grid-cols-2 items-center lg:grid-flow-col-dense">
+        <div className="grid gap-10 lg:grid-cols-2 items-center">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-card/60 backdrop-blur-md p-8 rounded-2xl border border-primary/20 shadow-lg hover:border-primary/30 transition-all duration-300"
+            className="bg-card/60 backdrop-blur-md p-4 sm:p-8 rounded-2xl border border-primary/20 shadow-lg hover:border-primary/30 transition-all duration-300 order-2 lg:order-1"
           >
-            <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
+              Send Me a Message
+            </h3>
 
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="flex flex-col gap-6"
+              className="flex flex-col gap-4 sm:gap-6"
             >
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <label className="text-sm font-medium" htmlFor="name">
                     Your Name
@@ -134,8 +136,8 @@ export function ContactSection() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="rajjak Shaikh"
-                    className="w-full bg-background/30 py-3 px-4 placeholder:text-muted-foreground rounded-lg outline-none border border-border font-medium focus:border-primary focus:bg-background/40 transition-colors"
+                    placeholder="Rajjak Shaikh"
+                    className="w-full bg-background/30 py-2 sm:py-3 px-3 sm:px-4 placeholder:text-muted-foreground rounded-lg outline-none border border-border font-medium focus:border-primary focus:bg-background/40 transition-colors text-sm sm:text-base"
                     required
                   />
                 </div>
@@ -150,7 +152,7 @@ export function ContactSection() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="rajjakshaikh8800@gmail.com"
-                    className="w-full bg-background/30 py-3 px-4 placeholder:text-muted-foreground rounded-lg outline-none border border-border font-medium focus:border-primary focus:bg-background/40 transition-colors"
+                    className="w-full bg-background/30 py-2 sm:py-3 px-3 sm:px-4 placeholder:text-muted-foreground rounded-lg outline-none border border-border font-medium focus:border-primary focus:bg-background/40 transition-colors text-sm sm:text-base"
                     required
                   />
                 </div>
@@ -161,19 +163,19 @@ export function ContactSection() {
                 </label>
                 <textarea
                   id="message"
-                  rows={5}
+                  rows={4}
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Tell me about your project or inquiry..."
-                  className="w-full bg-background/30 py-3 px-4 placeholder:text-muted-foreground rounded-lg outline-none border border-border font-medium focus:border-primary focus:bg-background/40 transition-colors"
+                  className="w-full bg-background/30 py-2 sm:py-3 px-3 sm:px-4 placeholder:text-muted-foreground rounded-lg outline-none border border-border font-medium focus:border-primary focus:bg-background/40 transition-colors text-sm sm:text-base"
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="bg-primary py-3 px-8 rounded-xl outline-none w-fit text-primary-foreground font-bold shadow-md hover:bg-primary/90 hover:shadow-primary/20 hover:shadow-lg transition-all duration-300 relative"
+                className="bg-primary py-2 sm:py-3 px-6 sm:px-8 rounded-xl outline-none w-fit text-primary-foreground font-bold shadow-md hover:bg-primary/90 hover:shadow-primary/20 hover:shadow-lg transition-all duration-300 relative text-sm sm:text-base"
                 disabled={loading}
               >
                 {loading ? (
@@ -181,7 +183,7 @@ export function ContactSection() {
                     <span className="opacity-0">Send Message</span>
                     <span className="absolute inset-0 flex items-center justify-center">
                       <svg
-                        className="animate-spin h-5 w-5 text-white"
+                        className="animate-spin h-4 w-4 sm:h-5 sm:w-5 text-white"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -200,7 +202,9 @@ export function ContactSection() {
                           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                         ></path>
                       </svg>
-                      <span className="ml-2">Sending...</span>
+                      <span className="ml-2 text-sm sm:text-base">
+                        Sending...
+                      </span>
                     </span>
                   </>
                 ) : (
@@ -210,55 +214,15 @@ export function ContactSection() {
             </form>
           </motion.div>
 
-          {/* Contact Info - Left Side */}
-
-          {/* Contact Information Card */}
-          {/* <div className="bg-card/60 backdrop-blur-md p-8 rounded-2xl border border-primary/20 shadow-lg hover:border-primary/30 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium text-lg">
-                      rajjak.shaikh@example.com
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="font-medium text-lg">+91 1234567890</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="font-medium text-lg">Mumbai, India</p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-          {/* Additional Information or Social Links */}
-
           {/* 3D Earth - Right Side */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="h-[500px] md:h-[600px] flex items-center justify-center"
+            className="h-[350px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center order-1 lg:order-2 w-full"
           >
-            <div className="w-full h-full">
+            <div className="earth-container">
               <EarthCanvas />
             </div>
           </motion.div>

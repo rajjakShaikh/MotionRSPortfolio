@@ -68,12 +68,12 @@ export function HeroSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl/none">
                   <span className="text-primary">Frontend</span> Developer
                 </h1>
               </motion.div>
 
-              <div className="h-32 md:h-20 mt-2">
+              <div className="h-36 sm:h-32 md:h-20 mt-2">
                 <TypewriterText
                   sequences={[
                     "Hi, I am Rajjak Shaikh...",
@@ -83,13 +83,13 @@ export function HeroSection() {
                     "I build modern web applications",
                     1000,
                   ]}
-                  className="text-xl md:text-2xl font-medium text-primary"
+                  className="text-lg sm:text-xl md:text-2xl font-medium text-primary"
                   wrapper="p"
                 />
               </div>
 
               <motion.div
-                className="max-w-[700px] mx-auto p-6 rounded-xl backdrop-blur-lg bg-white/15 dark:bg-black/25 border border-white/30 dark:border-white/10 shadow-xl relative overflow-hidden group"
+                className="max-w-[700px] mx-auto p-4 sm:p-6 rounded-xl backdrop-blur-lg bg-white/15 dark:bg-black/25 border border-white/30 dark:border-white/10 shadow-xl relative overflow-hidden group"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -103,67 +103,71 @@ export function HeroSection() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <p className="text-muted-foreground md:text-xl">
+                  <p className="text-sm sm:text-base md:text-xl text-muted-foreground">
                     Front-End Developer with Two Years of hands-on experience,
                     specializing in{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      React
-                    </motion.span>{" "}
-                    |{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      Next.js
-                    </motion.span>{" "}
-                    |{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      Tailwind CSS
-                    </motion.span>{" "}
-                    |{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      TypeScript
-                    </motion.span>{" "}
-                    |{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      Redux
-                    </motion.span>{" "}
-                    |{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      Zustand
-                    </motion.span>{" "}
-                    |{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      React Query
-                    </motion.span>{" "}
-                    |{" "}
-                    <motion.span
-                      className="text-primary font-medium inline-block"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                      ShadCN
-                    </motion.span>{" "}
-                    | I excel at building responsive, high-performing, and
-                    user-friendly web applications that deliver seamless UI/UX
-                    experiences.
+                    <span className="flex flex-wrap gap-x-2 gap-y-1 mt-2">
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        React
+                      </motion.span>{" "}
+                      |{" "}
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        Next.js
+                      </motion.span>{" "}
+                      |{" "}
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        Tailwind CSS
+                      </motion.span>{" "}
+                      |{" "}
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        TypeScript
+                      </motion.span>{" "}
+                      |{" "}
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        Redux
+                      </motion.span>{" "}
+                      |{" "}
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        Zustand
+                      </motion.span>{" "}
+                      |{" "}
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        React Query
+                      </motion.span>{" "}
+                      |{" "}
+                      <motion.span
+                        className="text-primary font-medium inline-block"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        ShadCN
+                      </motion.span>
+                    </span>
+                    <span className="block mt-2">
+                      I excel at building responsive, high-performing, and
+                      user-friendly web applications that deliver seamless UI/UX
+                      experiences.
+                    </span>
                   </p>
                 </div>
               </motion.div>
@@ -178,7 +182,7 @@ export function HeroSection() {
             >
               <Button
                 asChild
-                className="gap-1 rounded-xl px-3 py-3 text-md sm:w-40 relative overflow-hidden group"
+                className="gap-1 rounded-xl px-3 py-3 text-sm sm:text-md sm:w-40 relative overflow-hidden group"
               >
                 <Link
                   href="#contact"
@@ -192,15 +196,15 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button
-                className="relative overflow-hidden text-white  group border-2 border-[#ffd700] rounded-xl px-3 py-3  flex items-center
-                hover:bg-[#ffd700] hover:text-black transition-all duration-300"
+                className="relative overflow-hidden text-white group border-2 border-[#ffd700] rounded-xl px-3 py-3 flex items-center
+                hover:bg-[#ffd700] hover:text-black transition-all duration-300 text-sm sm:text-md"
                 onClick={HandleDownload}
               >
                 <span className="absolute inset-0 w-0 bg-[#ffd700] group-hover:w-full transition-all duration-300 -z-10"></span>
                 <span className="relative z-10 flex items-center">
-                  Download Resume
-                  <span className="ml-3 group-hover:rotate-12 transition-transform duration-100">
-                    <Download className="animate-pulse " />
+                  <span className="sm:inline">Download</span> Resume
+                  <span className="ml-2 sm:ml-3 group-hover:rotate-12 transition-transform duration-100">
+                    <Download className="h-4 w-4 animate-pulse" />
                   </span>
                 </span>
               </Button>
@@ -208,17 +212,17 @@ export function HeroSection() {
 
             {/* Tech tagline */}
             <motion.div
-              className="flex items-center gap-2 mt-8 w-full max-w-xl"
+              className="flex flex-col sm:flex-row items-center gap-2 mt-8 w-full max-w-xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              <div className="h-px flex-1 bg-border"></div>
-              <p className="text-sm text-muted-foreground whitespace-nowrap">
+              <div className="h-px w-16 sm:w-auto sm:flex-1 bg-border"></div>
+              <p className="text-xs sm:text-sm text-muted-foreground text-center px-2">
                 Specializing in React, Next.js, Tailwind CSS, TypeScript,
-                Shadcn, Redux, and Zustand.
+                ShadCN, Redux, and Zustand.
               </p>
-              <div className="h-px flex-1 bg-border"></div>
+              <div className="h-px w-16 sm:w-auto sm:flex-1 bg-border"></div>
             </motion.div>
           </motion.div>
 
